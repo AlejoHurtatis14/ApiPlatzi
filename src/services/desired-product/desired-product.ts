@@ -43,6 +43,7 @@ const DesiredProductService = {
         return false;
     },
     getDesiredProductsUser: async (idUser: number): Promise<Array<DesiredProduct>> => {
+        console.log(idUser)
         try {
             let desiredProducts: Array<DesiredProduct> | null = await getJsonObject('desiredProducts');
             if (desiredProducts) {

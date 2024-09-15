@@ -55,6 +55,7 @@ export const AuthProvider: React.FC<AuthProviderType> = ({ children }) => {
       const user = await getJsonObject('userapiplatzi');
       if (user) {
         setCurrentUser(user);
+        history.replace('/products-general')
       }
     };
 
@@ -77,7 +78,7 @@ export const AuthProvider: React.FC<AuthProviderType> = ({ children }) => {
   const logout = () => {
     setCurrentUser({ id: 0, email: "", name: "", password: "" });
     storage.remove('userapiplatzi');
-    history.push('/login')
+    history.replace('/login')
   };
 
   const presentToast = (

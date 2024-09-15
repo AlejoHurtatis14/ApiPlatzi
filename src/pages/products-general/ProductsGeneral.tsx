@@ -99,6 +99,7 @@ const ProductsGeneral: React.FC = () => {
   const getProdsDesireduser = () => {
     DesiredProductService.getDesiredProductsUser(currentUser.id)
       .then((desiredProducts: Array<DesiredProduct>) => {
+        console.log(desiredProducts)
         getProdsApiPlatzi(desiredProducts);
       })
       .catch((error) => {
